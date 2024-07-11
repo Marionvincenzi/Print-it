@@ -21,7 +21,7 @@ const dots = document.querySelector(".dots");
 const arrowRight = document.querySelector(".arrow_right");
 const arrowLeft = document.querySelector (".arrow_left")
 const img = document.querySelector('.banner-img');
-const p = document.getElementById("#banner p");
+const p = document.querySelector("#banner p");
 let index = 0;
 
 // Affichages des points
@@ -49,7 +49,7 @@ function clickRight() {
 		}
 
 		img.src= "./assets/images/slideshow/" + slides[index].image;
-		p.textContent = slides[index].tagLine;
+		p.innerHTML = slides[index].tagLine;
 		slideDots[index].classList.add("dot_selected")
 	})
 }
@@ -65,10 +65,12 @@ function clickLeft() {
 			index = slides.length -1
 		}
 		img.src= "./assets/images/slideshow/" + slides[index].image;
-		p.textContent = slides[index].tagLine;
+		p.innerHTML = slides[index].tagLine;
 		slideDots[index].classList.add("dot_selected")
 	})
 	
 }
 
-clickLeft()
+clickLeft();
+
+//Initialisation des points de navigation
